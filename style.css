@@ -1,5 +1,5 @@
-.html{
-    background-image: url(img/fond\ ecrant\ mobile\ top.png);
+.first{
+    background-image: url(img/backgroundtopmobile.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -7,13 +7,13 @@
 }
 .nom h1{
     font-family:'Gochi Hand', cursive;
-    font-size: 110%;
+    font-size: 200%;
     color: rgb(236, 238, 240);
     padding-top: 20%; 
 }
 .titre h2{
     font-family:'Concert One', cursive;
-    font-size: 90%;
+    font-size: 150%;
     color: rgb(236, 238, 240);
 }
 .row2.sous-titre.présentation h3{
