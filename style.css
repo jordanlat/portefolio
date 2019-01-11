@@ -1,22 +1,44 @@
 .first{
     background-image: url(img/backgroundtopmobile.png);
+    height: 731px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 10%;
 }
+.row {
+    display: block;
+
+}
 .nom h1{
     font-family:'Gochi Hand', cursive;
-    font-size: 200%;
+    font-size: 290%;
     color: rgb(236, 238, 240);
-    padding-top: 20%; 
+    padding-top: 50%; 
+    position: relative;
+    animation-name: slidename;
+    animation-duration: 4s;
+}
+@-webkit-keyframes slidename {
+    0% {left: -90%;opacity: 0}
+    25% {left: -90%;opacity: 0.25;}
+    100%{left: 0%;opacity: 1}
 }
 .titre h2{
     font-family:'Concert One', cursive;
-    font-size: 150%;
+    font-size: 210%;
     color: rgb(236, 238, 240);
+    padding-top:15%;
+    position: relative;
+    animation-name: slidetitre;
+    animation-duration: 4s;
 }
-.row2.sous-titre.présentation h3{
+@-webkit-keyframes slidetitre {
+    0% {right:-100%;opacity: 0;}
+    25% {right: -100%;opacity: 0.25;}
+    100% {right: 0%;opacity: 1;}
+}
+.présentation h3{
     font-family: 'Concert One', cursive;
-    color: red;
+    color: rgb(9, 86, 230);
 }
