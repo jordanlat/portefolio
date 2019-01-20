@@ -38,7 +38,19 @@
     25% {right: -100%;opacity: 0.25;}
     100% {right: 0%;opacity: 1;}
 }
+.second {
+    background-image: url(img/background\ mobile\ presentation.png);
+    height: 731px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 10%;
+}
 .présentation h3{
     font-family: 'Concert One', cursive;
-    color: rgb(9, 86, 230);
+    color: rgb(64, 112, 255);
+}
+.présentation p{
+    color: rgb(64, 112, 255);
+    font-family:  'Lato', sans-serif;
 }
