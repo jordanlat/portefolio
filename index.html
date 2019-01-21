@@ -13,6 +13,45 @@
   crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
   <script src="scripts.js"></script>
+
+<!--MDB 4.7.0-->
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/css/mdb.min.css" rel="stylesheet">
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/js/mdb.min.js"></script>
+<!--FIN MDB-->
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script>
+
+var state = 0;
+        $(window).scroll(function () {
+            var navTop = $('.nav').position();
+            /*
+            Pour connaitre la postion de la page pour le sticky
+            */
+            console.log(navTop.top);
+            console.log( $(this).scrollTop());
+
+            
+            if (state == 0 && $(this).scrollTop() > navTop.top + 150) {
+                $('.nav').addClass("sticky");
+                state = 1;
+            } else if (state == 1 && $(this).scrollTop() < 390) {
+                $('.nav').removeClass("sticky");
+                state = 0;
+            }
+        })
+  </script>
 </head>
 <body>
     <div class="html">
@@ -22,14 +61,30 @@
                     <h1>Jordan LAT</h1>
                 </div>
                 <div class="titre col-12 text-center">
-                    <h2>Développeur Web</h2>
+                    <h2>Portefolio</h2>
                 </div>    
             </div>
             <div class="row second">
                 <div class="sous-titre col-12 text-center">
                     <div class="présentation">
                         <h3>Présentation</h3>
+                    </div>
+                    <div class="text bg-white">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque eligendi ex iusto culpa tempora voluptatum quisquam accusamus rem odit reiciendis placeat maiores, ut, praesentium impedit repellendus blanditiis nihil ea possimus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row third">
+                <div class="sous-titre col-12 text-center">
+                    <div class="travail">
+                        <h3 class="animated bounceInUp">Mes Travaux</h3>
+                        <div class="text bg-white">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt ullam, soluta id quis voluptatem accusamus provident, maxime accusantium ab iste non ut eum atque, temporibus officiis praesentium recusandae nobis.</p><br>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam eos deserunt excepturi quibusdam quaerat magnam dolores facere earum! Fugiat unde nostrum quia maiores officiis veritatis tempore iure suscipit repellendus cum!</p><br>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt ullam, soluta id quis voluptatem accusamus provident, maxime accusantium ab iste non ut eum atque, temporibus officiis praesentium recusandae nobis.</p><br>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam eos deserunt excepturi quibusdam quaerat magnam dolores facere earum! Fugiat unde nostrum quia maiores officiis veritatis tempore iure suscipit repellendus cum!</p><br>
+                        
+                        </div>
                     </div>
                 </div>
             </div>

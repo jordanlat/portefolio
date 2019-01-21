@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 10%;
+    background-attachment: fixed;
 }
 .row {
     display: block;
@@ -39,18 +40,35 @@
     100% {right: 0%;opacity: 1;}
 }
 .second {
-    background-image: url(img/background\ mobile\ presentation.png);
-    height: 731px;
-    background-position: center;
+    background-image: url(img/banPrésentationgéo.png);
+    background-size: 558px 200px;
     background-repeat: no-repeat;
-    background-size: cover;
     padding-bottom: 10%;
+    background-attachment: fixed;
+/*
+    background-size: cover;
+    background-position: center;
+*/
 }
 .présentation h3{
     font-family: 'Concert One', cursive;
-    color: rgb(64, 112, 255);
+    color: #0055CC;
+    margin-bottom: 200px;
+    padding-top: 50px;
 }
-.présentation p{
-    color: rgb(64, 112, 255);
+.text {
     font-family:  'Lato', sans-serif;
+}
+.travail {
+    background-image: url(img/banMesTravaux.png);
+    background-size: 558px 200px;
+    background-repeat: no-repeat;
+    padding-bottom: 10%;
+    background-attachment: fixed;
+}
+.travail h3 {
+    font-family: 'Concert One', cursive;
+    color: #0055CC;
+    margin-bottom: 200px;
+    padding-top: 50px;
 }
