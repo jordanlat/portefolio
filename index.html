@@ -8,10 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Concert+One|Gochi+Hand|Lato" rel="stylesheet">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <script src="scripts.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
 
 <!--MDB 4.7.0-->
 <!-- Font Awesome -->
@@ -29,23 +27,55 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/js/mdb.min.js"></script>
 <!--FIN MDB-->
+
+
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script>
 
-var state = 0;
-        $(window).scroll(function () {
-            var navTop = $('.nom').position();
-            /*
-            Pour connaitre la postion de la page pour le sticky
-            */
-            console.log(navTop.top);
-            console.log( $(this).scrollTop());
+/* CODE Référence : http://jsfiddle.net/apaul34208/ozww5cvj/18/ */ 
+
+$(window).scroll(function () {
+    $('.présentation').each(function () {
+        var imagePos = $(this).offset().top;
+        var imageHeight = $(this).height();
+        var topOfWindow = $(window).scrollTop();
+        console.log("imagePos");
+        console.log(imagePos);
+        console.log("imageHeight");
+        console.log(imageHeight);
+        console.log("topOfWindow");
+        console.log(topOfWindow);
+        if (imageHeight + topOfWindow > imagePos) {
+            $(this).addClass("fade animated zoomIn");
+        } else {
+            $(this).removeClass("fade animated zoomIn");
+        }
+    });
+});
+
+
+
+/*  OLD
+    var state = 0;
+    $(window).scroll(function () {
+        var navTop = $('.nom').position();
+        
+        Pour connaitre la postion de la page pour le sticky
+        
+        console.log("navTop.top: ")
+        console.log(navTop.top);
+        console.log("position: ")
+        console.log( $(this).scrollTop());
+        
+        if ( state == 0 && $(this).scrollTop() >= 700) {
             
-            if ( state == 0 && $(this).scrollTop() == 300) {
-                console.log("LIMITE ATTEIND");
-                state = 1;
-            }
-        })
+            var fade = document.getElementsByClassName("présentation");
+            fade.className += "fade";
+            console.log("YOU FADE AWAY");
+            state = 1;
+        }
+    })
+*/
   </script>
 </head>
 <body>
@@ -61,11 +91,13 @@ var state = 0;
             </div>
             <div class="row second">
                 <div class="sous-titre col-12 text-center">
-                    <div class="présentation">
-                        <h3>Présentation</h3>
-                    </div>
-                    <div class="text bg-white">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque eligendi ex iusto culpa tempora voluptatum quisquam accusamus rem odit reiciendis placeat maiores, ut, praesentium impedit repellendus blanditiis nihil ea possimus.</p>
+                    <div class="présentation caché">
+                        <h3 class="">Présentation</h3>
+                        <div class="text bg-white">
+                            <div class="text">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque eligendi ex iusto culpa tempora voluptatum quisquam accusamus rem odit reiciendis placeat maiores, ut, praesentium impedit repellendus blanditiis nihil ea possimus.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -74,11 +106,12 @@ var state = 0;
                     <div class="travail">
                         <h3 class="animated bounceInUp">Mes Travaux</h3>
                         <div class="text bg-white">
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt ullam, soluta id quis voluptatem accusamus provident, maxime accusantium ab iste non ut eum atque, temporibus officiis praesentium recusandae nobis.</p><br>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam eos deserunt excepturi quibusdam quaerat magnam dolores facere earum! Fugiat unde nostrum quia maiores officiis veritatis tempore iure suscipit repellendus cum!</p><br>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt ullam, soluta id quis voluptatem accusamus provident, maxime accusantium ab iste non ut eum atque, temporibus officiis praesentium recusandae nobis.</p><br>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam eos deserunt excepturi quibusdam quaerat magnam dolores facere earum! Fugiat unde nostrum quia maiores officiis veritatis tempore iure suscipit repellendus cum!</p><br>
-                        
+                            <div class="text">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt ullam, soluta id quis voluptatem accusamus provident, maxime accusantium ab iste non ut eum atque, temporibus officiis praesentium recusandae nobis.</p><br>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam eos deserunt excepturi quibusdam quaerat magnam dolores facere earum! Fugiat unde nostrum quia maiores officiis veritatis tempore iure suscipit repellendus cum!</p><br>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt ullam, soluta id quis voluptatem accusamus provident, maxime accusantium ab iste non ut eum atque, temporibus officiis praesentium recusandae nobis.</p><br>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam eos deserunt excepturi quibusdam quaerat magnam dolores facere earum! Fugiat unde nostrum quia maiores officiis veritatis tempore iure suscipit repellendus cum!</p><br>
+                            </div>
                         </div>
                     </div>
                 </div>
